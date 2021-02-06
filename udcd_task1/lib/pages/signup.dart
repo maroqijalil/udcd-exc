@@ -32,9 +32,12 @@ class SignUpPage extends StatelessWidget {
               SizedBox(
                 height: 36.0,
               ),
-              SignUpTextField(
-                item:
-                    SignUpInput(hint: 'Nama Lengkap', icon: Icon(Icons.person)),
+              Column(
+                children: items
+                    .map((e) => SignUpTextField(
+                          item: e,
+                        ))
+                    .toList(),
               ),
             ],
           ),
