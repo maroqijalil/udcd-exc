@@ -6,7 +6,7 @@ import 'package:udcd_task1/widgets/signup_text_field.dart';
 class SignUpPage extends StatelessWidget {
   List<SignUpInput> items = [
     SignUpInput(hint: 'Nama Lengkap', icon: Icon(Icons.person)),
-    SignUpInput(hint: 'Email', icon: Icon(Icons.email)),
+    SignUpInput(hint: 'Email', icon: Icon(Icons.alternate_email)),
     SignUpInput(hint: 'Kata Sandi', icon: Icon(Icons.lock)),
     SignUpInput(hint: 'Konfirmasi Kata Sandi', icon: Icon(Icons.lock)),
   ];
