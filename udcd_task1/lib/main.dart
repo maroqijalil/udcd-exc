@@ -5,6 +5,7 @@ import 'package:udcd_task1/pages/post.dart';
 
 void main() => runApp(MaterialApp(
       initialRoute: '/',
+      debugShowCheckedModeBanner: false,
       routes: {
         '/': (context) => SignUpPage(),
         '/home': (context) => HomePage(),
