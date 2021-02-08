@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:udcd_task1/items/signup_input.dart';
@@ -25,8 +23,8 @@ class SignUpPage extends StatelessWidget {
               Text(
                 'Blogging',
                 style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 32.0,
+                  color: Colors.blue,
+                  fontSize: 42.0,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -44,46 +42,47 @@ class SignUpPage extends StatelessWidget {
                 height: 24.0,
               ),
               FlatButton(
-                onPressed: () {},
-                color: Colors.black,
+                onPressed: () {
+                  Navigator.pushNamed(context, '/home');
+                },
+                color: Colors.blue,
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    "Daftar",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 14.0,
-                      fontWeight: FontWeight.bold,
+                  padding: const EdgeInsets.all(12.0),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 64.0),
+                    child: Text(
+                      "Daftar",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(28.0)
-                ),
+                    borderRadius: BorderRadius.circular(28.0)),
               ),
-              SizedBox(height: 12.0,),
+              SizedBox(
+                height: 12.0,
+              ),
               RichText(
-                text: TextSpan(
-                  children: [
-                    TextSpan(
-                      text: "Sudah punya Akun?",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 12.0,
-                      ),
-                    ),
-                    TextSpan(
-                      text: "Masuk",
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () {},
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontSize: 12.0,
-                      )
-                    ),
-                  ]
-                )
-              ),
+                  text: TextSpan(children: [
+                TextSpan(
+                  text: "Sudah punya Akun? ",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 12.0,
+                  ),
+                ),
+                TextSpan(
+                    text: "Masuk",
+                    recognizer: TapGestureRecognizer()..onTap = () {},
+                    style: TextStyle(
+                      color: Colors.blue,
+                      fontSize: 12.0,
+                    )),
+              ])),
             ],
           ),
         ),

@@ -4,5 +4,5 @@ class SignUpInput {
   Icon icon;
   String hint;
 
-  SignUpInput({ this.icon, this.hint });
+  SignUpInput({this.icon, this.hint});
 }

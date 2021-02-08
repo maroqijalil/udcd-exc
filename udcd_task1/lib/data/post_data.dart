@@ -6,5 +6,5 @@ class PostData {
   String content;
   String date;
 
-  PostData({ this.initialName, this.title, this.content, this.date });
+  PostData({this.initialName, this.title, this.content, this.date});
 }

@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:udcd_task1/items/signup_input.dart';
 
@@ -28,7 +26,7 @@ class SignUpTextField extends StatelessWidget {
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(2),
             borderSide: BorderSide(
-              color: Colors.grey,
+              color: Colors.blue,
               width: 1,
             ),
           ),
