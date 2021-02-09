@@ -39,10 +39,10 @@ class PaymentPage extends StatelessWidget {
                 color: Colors.white, fontWeight: FontWeight.bold, fontSize: 24),
           ),
         ),
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.green,
       ),
       body: Padding(
-        padding: EdgeInsets.all(18.0),
+        padding: EdgeInsets.all(24.0),
         child: Column(
           children: <Widget>[
             Column(
@@ -56,8 +56,11 @@ class PaymentPage extends StatelessWidget {
               height: 24.0,
             ),
             RaisedButton(
-              padding: EdgeInsets.all(16.0),
-              color: Colors.red,
+              padding: EdgeInsets.fromLTRB(32.0, 12.0, 32.0, 12.0),
+              color: Colors.green,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(124.0),
+              ),
               onPressed: () {},
               child: Text(
                 "Bayar",

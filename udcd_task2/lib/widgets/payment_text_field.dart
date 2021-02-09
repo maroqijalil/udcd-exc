@@ -1,60 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:udcd_task2/items/payment_item.dart';
 
-class PaymentTextField extends StatefulWidget {
+class PaymentTextField extends StatelessWidget {
   PaymentItem item;
 
   PaymentTextField({this.item});
-
-  @override
-  _PaymentTextFieldState createState() => _PaymentTextFieldState();
-}
-
-class _PaymentTextFieldState extends State<PaymentTextField> {
-  FocusNode myFNode;
-
-  @override
-  void initState() {
-    super.initState();
-    myFNode = FocusNode();
-  }
-
-  @override
-  void dispose() {
-    myFNode.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(bottom: 12.0),
       child: Theme(
-        data: Theme.of(context).copyWith(primaryColor: Colors.red),
+        data: Theme.of(context).copyWith(primaryColor: Colors.green),
         child: TextFormField(
-          keyboardType: widget.item.type,
-          enabled: true,
-          focusNode: myFNode,
-          initialValue: widget.item.hint,
+          style: TextStyle(
+            fontSize: 18.0,
+          ),
+          keyboardType: item.type,
+          initialValue: item.hint,
           decoration: InputDecoration(
-            icon: widget.item.icon,
-            labelText: widget.item.name,
-            labelStyle: TextStyle(
-              color: myFNode.hasFocus ? Colors.red : Colors.grey,
-            ),
+            icon: item.icon,
+            labelText: item.name,
             enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(color: Colors.grey)),
-            focusedBorder:
-                UnderlineInputBorder(borderSide: BorderSide(color: Colors.red)),
+            focusedBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: Colors.green)),
             filled: true,
             fillColor: Colors.grey[250],
-            focusColor: Colors.red,
+            focusColor: Colors.green,
           ),
-          cursorColor: Colors.red,
-          onFieldSubmitted: (term) {
-            myFNode.unfocus();
-            FocusScope.of(context).requestFocus(myFNode);
-          },
+          cursorColor: Colors.green,
         ),
       ),
     );
