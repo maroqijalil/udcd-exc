@@ -11,6 +11,8 @@ class SignUpTextField extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(bottom: 12.0),
       child: TextField(
+        obscureText: item.hide,
+        keyboardType: item.type,
         decoration: InputDecoration(
           hintText: item.hint,
           prefixIcon: item.icon,
