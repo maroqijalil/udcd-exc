@@ -13,6 +13,7 @@ class PaymentPage extends StatelessWidget {
         type: TextInputType.name),
     PaymentItem(
         icon: Icon(Icons.payment),
+        img: true,
         name: "Nomor Kartu",
         hint: "567 666 666 666",
         type: TextInputType.number),

@@ -19,7 +19,12 @@ class PaymentTextField extends StatelessWidget {
           keyboardType: item.type,
           initialValue: item.hint,
           decoration: InputDecoration(
-            icon: item.icon,
+            icon: (item.img)
+                ? Image.asset(
+                    'assets/verve_card.png',
+                    width: 24.0,
+                  )
+                : item.icon,
             labelText: item.name,
             enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(color: Colors.grey)),
