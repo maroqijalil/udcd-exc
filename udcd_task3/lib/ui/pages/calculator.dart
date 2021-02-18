@@ -8,6 +8,33 @@ class CalculatorPage extends StatefulWidget {
 class _CalculatorPageState extends State<CalculatorPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Luas dan Keliling",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+      ),
+      body: Container(
+        padding: EdgeInsets.all(16.0),
+        child: Column(children: [
+          Form(
+            child: Column(
+              children: [
+                TextFormField(),
+                SizedBox(height: 12.0),
+                TextFormField(),
+                SizedBox(height: 12.0),
+                MaterialButton(),
+              ],
+            ),
+          ),
+          Text("Hasil"),
+        ]),
+      ),
+    );
   }
 }
