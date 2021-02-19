@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:udcd_task3/ui/items/login_item.dart';
 
@@ -10,6 +12,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final GlobalKey<ScaffoldState> _key = GlobalKey<ScaffoldState>();
 
+  Timer timer;
   LoginItem uname = LoginItem(
       controller: TextEditingController(),
       hint: "Nama Pengguna",
@@ -72,8 +75,17 @@ class _LoginPageState extends State<LoginPage> {
     ));
 
     if (sbMsg == "Berhasil masuk!") {
-      Navigator.pushNamed(context, '/');
+      FocusScope.of(context).requestFocus(FocusNode());
+      timer = Timer(Duration(milliseconds: 1000), () {
+        Navigator.pushReplacementNamed(context, '/');
+      });
     }
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    timer.cancel();
   }
 
   @override

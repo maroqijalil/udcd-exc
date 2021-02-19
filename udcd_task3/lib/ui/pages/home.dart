@@ -35,6 +35,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
+              color: Colors.amber,
               onPressed: () {
                 Navigator.pushNamed(context, '/calc');
               },
@@ -54,6 +55,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
+              color: Colors.amber,
               onPressed: () {
                 Navigator.pushNamed(context, '/converter');
               },
