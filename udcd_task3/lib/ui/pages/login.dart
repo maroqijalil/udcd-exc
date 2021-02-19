@@ -70,6 +70,10 @@ class _LoginPageState extends State<LoginPage> {
     currentState.showSnackBar(SnackBar(
       content: Text(sbMsg),
     ));
+
+    if (sbMsg == "Berhasil masuk!") {
+      Navigator.pushNamed(context, '/');
+    }
   }
 
   @override

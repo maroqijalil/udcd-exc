@@ -11,12 +11,14 @@ class _CalculatorPageState extends State<CalculatorPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Luas dan Keliling",
+          "Hitung Luas dan Volume",
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.white,
+            fontSize: 24,
           ),
         ),
+        backgroundColor: Colors.amber,
       ),
       body: Container(
         padding: EdgeInsets.all(16.0),
