@@ -33,6 +33,80 @@ class _CalculatorPageState extends State<CalculatorPage> {
     });
   }
 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Hitung Luas dan Volume",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+            fontSize: 24,
+          ),
+        ),
+        backgroundColor: Colors.amber,
+      ),
+      body: Container(
+        padding: EdgeInsets.all(16.0),
+        child: SingleChildScrollView(
+          child: Container(
+            margin: EdgeInsets.only(top: 28.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Center(
+                  child: Text(
+                    "Menghitung Luas",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 32,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 18.0),
+                InputNumberTextField(
+                    "Panjang (m)", "Masukkan panjang", panjang_luas),
+                SizedBox(height: 12.0),
+                InputNumberTextField("Lebar (m)", "Masukkan lebar", lebar_luas),
+                SizedBox(height: 12.0),
+                ButtonCountResult(
+                    (hasil_luas == 0.0) ? "" : "Luas = $hasil_luas m2",
+                    "Hitung Luas", () {
+                  hitungLuas();
+                }),
+                SizedBox(height: 24),
+                Center(
+                  child: Text(
+                    "Menghitung Volume",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 32,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 18.0),
+                InputNumberTextField(
+                    "Panjang (m)", "Masukkan panjang", panjang_vol),
+                SizedBox(height: 12.0),
+                InputNumberTextField("Lebar (m)", "Masukkan lebar", lebar_vol),
+                SizedBox(height: 12.0),
+                InputNumberTextField(
+                    "Tinggi (m)", "Masukkan tinggi", tinggi_vol),
+                SizedBox(height: 12.0),
+                ButtonCountResult(
+                    (hasil_luas == 0.0) ? "" : "Volume = $hasil_volume m3",
+                    "Hitung Volume", () {
+                  hitungVol();
+                }),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
   Widget InputNumberTextField(
       String title, String hint, TextEditingController controller) {
     return Container(
@@ -101,80 +175,6 @@ class _CalculatorPageState extends State<CalculatorPage> {
             onPressed: count_func,
           )
         ],
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Hitung Luas dan Volume",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-            fontSize: 24,
-          ),
-        ),
-        backgroundColor: Colors.amber,
-      ),
-      body: Container(
-        padding: EdgeInsets.all(16.0),
-        child: SingleChildScrollView(
-          child: Container(
-            margin: EdgeInsets.only(top: 28.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Center(
-                  child: Text(
-                    "Menghitung Luas",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 32,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 18.0),
-                InputNumberTextField(
-                    "Panjang (m)", "Masukkan panjang", panjang_luas),
-                SizedBox(height: 12.0),
-                InputNumberTextField("Lebar (m)", "Masukkan lebar", lebar_luas),
-                SizedBox(height: 12.0),
-                ButtonCountResult(
-                    (hasil_luas == 0.0) ? "" : "Luas = $hasil_luas m2",
-                    "Hitung Luas", () {
-                  hitungLuas();
-                }),
-                SizedBox(height: 24),
-                Center(
-                  child: Text(
-                    "Menghitung Volume",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 32,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 18.0),
-                InputNumberTextField(
-                    "Panjang (m)", "Masukkan panjang", panjang_vol),
-                SizedBox(height: 12.0),
-                InputNumberTextField("Lebar (m)", "Masukkan lebar", lebar_vol),
-                SizedBox(height: 12.0),
-                InputNumberTextField(
-                    "Tinggi (m)", "Masukkan tinggi", tinggi_vol),
-                SizedBox(height: 12.0),
-                ButtonCountResult(
-                    (hasil_luas == 0.0) ? "" : "Volume = $hasil_volume m2",
-                    "Hitung Volume", () {
-                  hitungVol();
-                }),
-              ],
-            ),
-          ),
-        ),
       ),
     );
   }
