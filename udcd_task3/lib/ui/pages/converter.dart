@@ -9,16 +9,17 @@ class ConverterPage extends StatefulWidget {
 }
 
 class _ConverterPageState extends State<ConverterPage> {
-  List satuan_panjang = ["mm", "cm", "dm", "m", "dam", "hm", "km"];
+  List satuan_panjang = ["km", "hm", "dam", "m", "dm", "cm", "mm"];
   String satuan_a = "m";
   String satuan_b = "m";
   Timer timer;
+  bool init = true;
 
   TextEditingController input_panjang = TextEditingController();
   String result_panjang = " ";
 
-  void convertPanjang(String value) {
-    double number = double.parse(value);
+  void convertPanjang() {
+    double number = double.parse(input_panjang.text);
     int index1 = satuan_panjang.indexOf(satuan_a);
     int index2 = satuan_panjang.indexOf(satuan_b);
     int subt = index1 - index2;
@@ -38,15 +39,25 @@ class _ConverterPageState extends State<ConverterPage> {
       result_panjang = number.toString();
     });
 
-    timer = Timer(Duration(milliseconds: 500), () {
+    if (init) {
+      setState(() {
+        init = false;
+      });
+      this.checker();
+    }
+
+    number = 0.0;
+  }
+
+  void checker() {
+    timer = Timer(Duration(milliseconds: 100), () {
       if (input_panjang.text.isEmpty) {
         setState(() {
           result_panjang = " ";
         });
       }
+      this.checker();
     });
-
-    number = 0.0;
   }
 
   @override
@@ -82,7 +93,7 @@ class _ConverterPageState extends State<ConverterPage> {
                     child: Container(
                       margin: EdgeInsets.only(bottom: 24.0),
                       child: TextField(
-                        onChanged: (value) => convertPanjang(value),
+                        onChanged: (value) => convertPanjang(),
                         onEditingComplete: () => {
                           setState(() {
                             result_panjang = " ";
@@ -142,6 +153,7 @@ class _ConverterPageState extends State<ConverterPage> {
                       onChanged: (value) {
                         setState(() {
                           satuan_a = value;
+                          convertPanjang();
                         });
                       },
                     ),
@@ -197,6 +209,7 @@ class _ConverterPageState extends State<ConverterPage> {
                         setState(() {
                           satuan_b = value;
                         });
+                        convertPanjang();
                       },
                     ),
                   ),
