@@ -7,7 +7,7 @@ class CalculatorPage extends StatefulWidget {
 
 class _CalculatorPageState extends State<CalculatorPage> {
   double hasil_luas = 0.0;
-  double hasil_volume;
+  double hasil_volume = 0.0;
 
   TextEditingController panjang_luas = TextEditingController();
   TextEditingController lebar_luas = TextEditingController();
@@ -61,6 +61,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 32,
+                      color: Colors.amber,
                     ),
                   ),
                 ),
@@ -82,6 +83,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 32,
+                      color: Colors.amber,
                     ),
                   ),
                 ),
@@ -95,7 +97,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
                     "Tinggi (m)", "Masukkan tinggi", tinggi_vol),
                 SizedBox(height: 12.0),
                 ButtonCountResult(
-                    (hasil_luas == 0.0) ? "" : "Volume = $hasil_volume m3",
+                    (hasil_volume == 0.0) ? "" : "Volume = $hasil_volume m3",
                     "Hitung Volume", () {
                   hitungVol();
                 }),
