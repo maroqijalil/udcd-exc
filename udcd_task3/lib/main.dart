@@ -10,7 +10,7 @@ void main() => runApp(
         initialRoute: '/login',
         routes: {
           '/login': (context) => LoginPage(),
-          '/clac': (context) => CalculatorPage(),
+          '/calc': (context) => CalculatorPage(),
           '/converter': (context) => ConverterPage(),
           '/': (context) => HomePage(),
         },

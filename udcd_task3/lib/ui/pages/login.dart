@@ -39,6 +39,8 @@ class _LoginPageState extends State<LoginPage> {
       });
 
   Function loginValidation(ScaffoldState currentState) {
+    FocusScope.of(context).requestFocus(FocusNode());
+
     String sbMsg = "";
 
     if (uname.controller.text.isEmpty && passwd.controller.text.isEmpty) {
@@ -75,7 +77,6 @@ class _LoginPageState extends State<LoginPage> {
     ));
 
     if (sbMsg == "Berhasil masuk!") {
-      FocusScope.of(context).requestFocus(FocusNode());
       timer = Timer(Duration(milliseconds: 1000), () {
         Navigator.pushReplacementNamed(context, '/');
       });
